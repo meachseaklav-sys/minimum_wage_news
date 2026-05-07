@@ -3,7 +3,7 @@ name: Run Wage News Bot
 on:
   schedule:
     # Runs every day at 18:00 UTC (6 PM)
-    - cron: '40 4 * * *'
+    - cron: '0 11 * * *'
   workflow_dispatch: 
 
 jobs:
