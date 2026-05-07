@@ -1,0 +1,27 @@
+name: Run Wage News Bot
+
+on:
+  schedule:
+    # Runs every day at 18:00 UTC (6 PM)
+    - cron: '0 18 * * *'
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install requests feedparser beautifulsoup4 googlenewsdecoder nbconvert ipykernel
+
+      - name: Execute Notebook
+        run: |
+          jupyter nbconvert --to notebook --execute Min_wage_Last_Version.ipynb --output executed_notebook.ipynb
