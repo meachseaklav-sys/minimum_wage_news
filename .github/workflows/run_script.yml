@@ -24,4 +24,4 @@ jobs:
 
       - name: Execute Notebook
         run: |
-          jupyter nbconvert --to notebook --execute Min_wage_Last_Version.ipynb --output executed_notebook.ipynb
+          jupyter nbconvert --to notebook --execute Min_wage2.ipynb --output executed_notebook.ipynb
